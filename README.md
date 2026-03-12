@@ -1,2 +1,2 @@
-# HDPE-product-page
+# Hdpe-product-page
 Product page implementation
