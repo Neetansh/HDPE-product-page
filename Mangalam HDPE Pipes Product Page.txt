@@ -1,0 +1,29 @@
+Mangalam HDPE Pipes Product Page
+
+Overview
+This project is a responsive product landing page built using HTML, CSS, and JavaScript based on the provided Figma design.
+
+Features
+- Product image gallery with thumbnails
+- Image zoom interaction
+- Technical specifications section
+- FAQ accordion
+- Manufacturing process tabs
+- Quote request modal
+- Catalogue download modal
+- Responsive layout
+- Structured footer
+
+Technologies Used
+HTML5
+CSS3
+JavaScript
+
+Folder Structure
+index.html
+styles.css
+script.js
+assets/images
+
+How to Run
+Open index.html in a browser.

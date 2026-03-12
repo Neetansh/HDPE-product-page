@@ -1,0 +1,893 @@
+
+/* =====================================================
+Start
+===================================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f5f7fb;
+color:#222;
+line-height:1.6;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
+
+.stickyProduct{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+background:white;
+border-bottom:1px solid #eee;
+padding:12px 0;
+
+transform:translateY(-100%);
+transition:transform 0.35s ease;
+
+z-index:1000;
+}
+
+/* when active */
+
+.stickyProduct.show{
+transform:translateY(0);
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.stickyWrap{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.stickyTitle{
+font-weight:600;
+}
+
+.stickyPrice{
+margin-right:20px;
+font-weight:600;
+color:#2e3f8f;
+}
+
+/* =====================================================
+TYPOGRAPHY
+===================================================== */
+
+.centerTitle{
+text-align:center;
+font-size:32px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.sectionSub{
+text-align:center;
+max-width:700px;
+margin:0 auto 40px auto;
+color:#666;
+font-size:15px;
+}
+
+
+/* =====================================================
+NAVBAR
+===================================================== */
+
+.navbar{
+background:white;
+border-bottom:1px solid #eaeaea;
+position:relative;
+}
+
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+}
+
+.logo span{
+color:#2e3f8f;
+}
+
+nav{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+nav a:hover{
+color:#2e3f8f;
+}
+
+
+/* =====================================================
+BUTTONS
+===================================================== */
+
+.btn{
+border:none;
+padding:12px 22px;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+.primary{
+background:#2e3f8f;
+color:white;
+}
+
+.primary:hover{
+background:#1f2e70;
+}
+
+.outline{
+background:white;
+border:1px solid #2e3f8f;
+color:#2e3f8f;
+}
+
+.white{
+background:white;
+color:#2e3f8f;
+}
+
+.center{
+display:block;
+margin:40px auto;
+}
+
+
+/* =====================================================
+HERO SECTION
+===================================================== */
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+
+/* =====================================================
+IMAGE GALLERY + LENS ZOOM
+===================================================== */
+
+.gallery{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.main-image{
+position:relative;
+border-radius:12px;
+overflow:hidden;
+background:#eee;
+cursor:crosshair;
+}
+
+.main-image img{
+width:100%;
+display:block;
+}
+
+/* ZOOM LENS */
+
+.zoom-lens{
+position:absolute;
+
+width:120px;
+height:120px;
+
+border:2px solid #2e3f8f;
+border-radius:4px;
+
+display:none;
+
+background-repeat:no-repeat;
+background-size:200% 200%;
+
+pointer-events:none;
+}
+
+.thumbs{
+display:flex;
+gap:10px;
+}
+
+.thumbs img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:6px;
+cursor:pointer;
+border:2px solid transparent;
+}
+
+.thumbs img:hover{
+border:2px solid #2e3f8f;
+}
+
+
+/* =====================================================
+PRODUCT INFO
+===================================================== */
+
+.product h1{
+font-size:30px;
+margin:15px 0;
+}
+
+.features{
+margin:15px 0;
+padding-left:20px;
+}
+
+.features li{
+margin-bottom:6px;
+}
+
+
+/* =====================================================
+CERTIFICATION BADGES
+===================================================== */
+
+.certs{
+display:flex;
+gap:16px;
+margin-bottom:15px;
+}
+
+.certBadge{
+display:flex;
+flex-direction:column;
+align-items:center;
+font-size:12px;
+color:#555;
+}
+
+.certBadge img{
+height:26px;
+margin-bottom:4px;
+}
+
+.badge{
+background:#eef1f8;
+padding:6px 12px;
+border-radius:6px;
+font-size:13px;
+}
+
+
+/* =====================================================
+PRICE CARD
+===================================================== */
+
+.priceCard{
+background:white;
+padding:20px;
+border-radius:12px;
+margin:20px 0;
+box-shadow:0 5px 15px rgba(0,0,0,0.06);
+}
+
+.priceLabel{
+font-weight:600;
+}
+
+.priceCard h3{
+margin:10px 0;
+font-size:24px;
+}
+
+.shipping{
+display:flex;
+gap:10px;
+margin:10px 0;
+flex-wrap:wrap;
+}
+
+.shipping span{
+background:#ffe9b5;
+padding:6px 10px;
+border-radius:6px;
+font-size:13px;
+}
+
+.certLine{
+font-size:14px;
+color:#666;
+}
+
+.buttons{
+display:flex;
+gap:15px;
+}
+
+
+/* =====================================================
+TECHNICAL SECTION
+===================================================== */
+
+.technical{
+background:#0b2239;
+color:white;
+padding:100px 0;
+}
+
+.technical table{
+width:100%;
+border-collapse:collapse;
+margin-bottom:40px;
+}
+
+.technical th,
+.technical td{
+padding:18px;
+border-bottom:1px solid rgba(255,255,255,0.15);
+text-align:left;
+}
+
+.technical .btn{
+display:block;
+margin:40px auto 0;
+padding:14px 26px;
+border-radius:8px;
+font-weight:600;
+background:white;
+color:#0b2239;
+border:1px solid white;
+}
+
+.technical .btn:hover{
+background:#e9edf6;
+}
+
+
+/* =====================================================
+BENEFITS SECTION
+===================================================== */
+
+.benefitGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.benefit{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 12px rgba(0,0,0,0.05);
+}
+
+.benefit h3{
+margin-bottom:10px;
+}
+
+.benefitsButton{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
+
+
+/* =====================================================
+FAQ
+===================================================== */
+
+.faqItem{
+background:white;
+margin-bottom:10px;
+border-radius:8px;
+overflow:hidden;
+}
+
+.faqQ{
+padding:18px;
+cursor:pointer;
+font-weight:600;
+}
+
+.faqA{
+padding:0 18px;
+max-height:0;
+overflow:hidden;
+transition:max-height .3s ease;
+}
+
+
+/* =====================================================
+APPLICATIONS
+===================================================== */
+
+.appSlider{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.appCard{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 12px rgba(0,0,0,0.05);
+}
+
+.appCard img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+
+/* =====================================================
+PROCESS
+===================================================== */
+
+.steps{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:30px;
+justify-content:center;
+}
+
+.step{
+background:#e9ecf6;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.step.active{
+background:#2e3f8f;
+color:white;
+}
+
+.processContent{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+}
+
+.processImage img{
+width:100%;
+border-radius:10px;
+}
+
+
+/* =====================================================
+TESTIMONIALS
+===================================================== */
+
+.testimonialGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.testimonial{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 12px rgba(0,0,0,0.05);
+}
+
+
+/* =====================================================
+PORTFOLIO
+===================================================== */
+
+.portfolioGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.portfolioCard{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 12px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+.portfolioCard img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+
+/* =====================================================
+EXPERT CTA
+===================================================== */
+
+.expert{
+text-align:center;
+}
+
+
+/* =====================================================
+RESOURCES
+===================================================== */
+
+.resources ul{
+list-style:none;
+background:white;
+border-radius:12px;
+overflow:hidden;
+}
+
+.resources li{
+display:flex;
+justify-content:space-between;
+padding:18px;
+border-bottom:1px solid #eee;
+}
+
+.linkBtn{
+background:none;
+border:none;
+color:#2e3f8f;
+font-weight:600;
+cursor:pointer;
+}
+
+
+/* =====================================================
+CTA SECTION
+===================================================== */
+
+.ctaSection{
+padding:120px 0;
+display:flex;
+justify-content:center;
+}
+
+.ctaContainer{
+background:#2f3d8f;
+max-width:1200px;
+width:100%;
+border-radius:30px;
+padding:70px 80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+}
+
+.ctaText{
+color:white;
+max-width:520px;
+}
+
+.ctaText h2{
+font-size:42px;
+margin-bottom:18px;
+}
+
+.ctaSub{
+opacity:0.9;
+margin-bottom:25px;
+}
+
+.ctaDivider{
+height:1px;
+background:rgba(255,255,255,0.35);
+margin:25px 0;
+}
+
+.ctaFormCard{
+background:#f5f5f7;
+padding:32px;
+border-radius:18px;
+width:380px;
+box-shadow:0 18px 40px rgba(0,0,0,0.15);
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.ctaFormCard input{
+width:100%;
+padding:13px 14px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:14px;
+background:white;
+}
+
+.phoneInput{
+display:flex;
+gap:10px;
+}
+
+.phoneInput span{
+background:#e9e9ec;
+padding:12px 14px;
+border-radius:8px;
+font-size:14px;
+display:flex;
+align-items:center;
+}
+
+.phoneInput input{
+flex:1;
+}
+
+.ctaButton{
+background:#111;
+color:white;
+border:none;
+padding:14px;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+margin-top:8px;
+transition:0.2s;
+width:100%;
+}
+
+.ctaButton:hover{
+background:#000;
+}
+
+
+/* =====================================================
+FOOTER
+===================================================== */
+
+/* =========================================
+MEGA FOOTER
+========================================= */
+
+.megaFooter{
+background:#f3f3f3;
+margin-top:80px;
+font-size:14px;
+color:#444;
+}
+
+
+/* TOP BANNER */
+
+.footerBanner{
+background:#e9e9ea;
+border-radius:18px;
+padding:30px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:60px;
+}
+
+.footerTag{
+font-size:22px;
+font-weight:600;
+}
+
+.footerTag span{
+color:#2e3f8f;
+}
+
+.footerLogoText{
+font-size:26px;
+font-weight:700;
+}
+
+.footerLogoText span{
+color:#2e3f8f;
+}
+
+
+/* MAIN GRID */
+
+.footerMain{
+display:grid;
+grid-template-columns:1fr 1.5fr 1fr 1.2fr;
+gap:60px;
+padding-bottom:60px;
+}
+
+.footerCol h4{
+margin-bottom:15px;
+font-size:16px;
+font-weight:600;
+}
+
+.footerCol p{
+margin-bottom:10px;
+color:#666;
+cursor:pointer;
+}
+
+.footerCol p:hover{
+color:#2e3f8f;
+}
+
+
+/* CONTACT */
+
+.contactCol p{
+display:flex;
+gap:10px;
+align-items:flex-start;
+}
+
+
+/* SOCIAL */
+
+.footerSocial{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.footerSocial span{
+width:28px;
+height:28px;
+border-radius:50%;
+background:#2e3f8f;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:13px;
+cursor:pointer;
+}
+
+
+/* BOTTOM BAR */
+
+.footerBottom{
+background:#e1e1e1;
+padding:18px 0;
+}
+
+.footerBottomWrap{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.footerLinks{
+display:flex;
+gap:25px;
+}
+
+.footerLinks span{
+cursor:pointer;
+color:#555;
+}
+
+.footerLinks span:hover{
+color:#2e3f8f;
+}
+
+
+/* =====================================================
+MODALS
+===================================================== */
+
+.modalOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.25);
+backdrop-filter:blur(10px);
+z-index:9999;
+}
+
+.modalContainer{
+width:460px;
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 30px 60px rgba(0,0,0,0.25);
+}
+
+.modalHeader{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 22px;
+border-bottom:1px solid #eee;
+}
+
+.modalClose{
+border:none;
+background:#f2f2f2;
+width:32px;
+height:32px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.modalBody{
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.modalBody input{
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.modalFooter{
+padding:16px 20px;
+border-top:1px solid #eee;
+display:flex;
+justify-content:flex-end;
+}
+
+.modalDownloadBtn{
+background:#2e3f8f;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+
+
+/* =====================================================
+RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.benefitGrid,
+.appSlider,
+.processContent,
+.portfolioGrid,
+.testimonialGrid{
+grid-template-columns:1fr;
+}
+
+.footerGrid{
+grid-template-columns:1fr;
+}
+
+}
